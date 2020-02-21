@@ -99,3 +99,53 @@ function register_o2_post_action_states() {
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_o2_post_action_states' );
+
+/**
+ * Outputs a dynamic Widget to display feeds.
+ *
+ * @since 1.0.0
+ */
+function before_o2_sidebar() {
+	$secondary_feed = '';
+	$queried_object = get_queried_object();
+
+	if ( is_category() ) {
+		$secondary_feed = sprintf(
+			'<li class="wptribu-category-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
+			esc_url( get_category_feed_link( $queried_object->term_id ) ),
+			/* Translators: %s is the Term name */
+			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
+		);
+	} elseif ( is_tag() ) {
+		$secondary_feed = sprintf(
+			'<li class="wptribu-tag-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
+			esc_url( get_edit_tag_link( $queried_object->term_id ) ),
+			/* Translators: %s is the Term name */
+			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
+		);
+	} elseif ( is_author() ) {
+		$secondary_feed = sprintf(
+			'<li class="wptribu-author-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
+			esc_url( get_author_feed_link( $queried_object->ID ) ),
+			/* Translators: %s is the Author display name */
+			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->display_name ) )
+		);
+	}
+
+	printf(
+		'<div id="wptribu-feed" class="box gray widget widget_categories">
+			<h4 class="widget-title">%1$s</h4>
+			<div class="widget-content">
+				<ul>
+					<li class="wptribu-blog-feed"><a href="%2$s"><span class="genericon genericon-rss"></span> %3$s</a></li>
+					%4$s
+				</ul>
+			</div>
+		</div>',
+		esc_html__( 'Subcribe to feed', 'wptribu-plugin' ),
+		esc_url( get_feed_link() ),
+		esc_html__( 'Site’s feed', 'wptribu-plugin' ),
+		$secondary_feed
+	);
+}
+add_action( 'before_o2_sidebar', __NAMESPACE__ . '\before_o2_sidebar' );
