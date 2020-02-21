@@ -1,0 +1,193 @@
+# Copyright (C) 2019 Nacin
+# This file is distributed under the same license as the Handbook Functionality for Pages plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Handbook Functionality for Pages\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/handbook\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-12-11T14:16:12+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: wporg\n"
+
+#. Plugin Name of the plugin
+msgid "Handbook Functionality for Pages"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds handbook-like table of contents to all Pages for a site. Covers Table of Contents and the \"watch this page\" widget."
+msgstr ""
+
+#. Author of the plugin
+msgid "Nacin"
+msgstr ""
+
+#: handbook.php:184
+msgid "Handbook name"
+msgstr ""
+
+#: handbook.php:185
+msgid "Handbook name (%s)"
+msgstr ""
+
+#: handbook.php:228
+msgid "%s Page"
+msgstr ""
+
+#: handbook.php:230
+msgid "%s Pages"
+msgstr ""
+
+#: handbook.php:407
+msgid "%s Sidebar"
+msgstr ""
+
+#: handbook.php:408
+msgid "Used on %s pages"
+msgstr ""
+
+#: inc/breadcrumbs.php:53
+msgid "Home"
+msgstr ""
+
+#: inc/breadcrumbs.php:57
+#: inc/breadcrumbs.php:59
+msgid "Handbook"
+msgstr ""
+
+#: inc/callout-boxes.php:26
+msgid "Note:"
+msgstr ""
+
+#: inc/callout-boxes.php:27
+msgid "Tip:"
+msgstr ""
+
+#: inc/callout-boxes.php:28
+msgid "Alert:"
+msgstr ""
+
+#: inc/callout-boxes.php:29
+msgid "Tutorial:"
+msgstr ""
+
+#: inc/callout-boxes.php:30
+msgid "Warning:"
+msgstr ""
+
+#: inc/glossary.php:36
+#: inc/glossary.php:47
+msgctxt "glossary"
+msgid "Glossary"
+msgstr ""
+
+#: inc/glossary.php:37
+msgctxt "glossary"
+msgid "Entry"
+msgstr ""
+
+#: inc/glossary.php:38
+msgctxt "glossary"
+msgid "Add New"
+msgstr ""
+
+#: inc/glossary.php:39
+msgctxt "glossary"
+msgid "Add New Entry"
+msgstr ""
+
+#: inc/glossary.php:40
+msgctxt "glossary"
+msgid "Edit Entry"
+msgstr ""
+
+#: inc/glossary.php:41
+msgctxt "glossary"
+msgid "New Entry"
+msgstr ""
+
+#: inc/glossary.php:42
+msgctxt "glossary"
+msgid "View Entry"
+msgstr ""
+
+#: inc/glossary.php:43
+msgctxt "glossary"
+msgid "Search Glossary"
+msgstr ""
+
+#: inc/glossary.php:44
+msgctxt "glossary"
+msgid "No entries found"
+msgstr ""
+
+#: inc/glossary.php:45
+msgctxt "glossary"
+msgid "No entries found in Trash"
+msgstr ""
+
+#: inc/glossary.php:46
+msgctxt "glossary"
+msgid "Parent Entry:"
+msgstr ""
+
+#: inc/glossary.php:48
+msgctxt "glossary"
+msgid "Glossary Entry"
+msgstr ""
+
+#: inc/glossary.php:74
+msgid "Created by"
+msgstr ""
+
+#: inc/glossary.php:101
+msgid "Edit"
+msgstr ""
+
+#: inc/glossary.php:112
+msgid "Add new entry"
+msgstr ""
+
+#: inc/navigation.php:375
+msgid "Handbook navigation"
+msgstr ""
+
+#: inc/table-of-contents.php:37
+msgid "Topics"
+msgstr ""
+
+#: inc/table-of-contents.php:145
+msgid "Top &uarr;"
+msgstr ""
+
+#: inc/watchlist.php:51
+msgid "<a href=\"%s\" title=\"%s\">Unwatch</a>"
+msgstr ""
+
+#: inc/watchlist.php:53
+msgid "Stop getting notified about changes to this page"
+msgstr ""
+
+#: inc/watchlist.php:57
+msgid "<a href=\"%s\" title=\"%s\">Watch</a>"
+msgstr ""
+
+#: inc/watchlist.php:59
+msgid "Get notified about changes to this page"
+msgstr ""
+
+#: inc/widgets.php:27
+msgid "Your site&#8217;s Handbook Pages"
+msgstr ""
+
+#: inc/widgets.php:30
+msgid "Handbook Pages"
+msgstr ""
+
+#: inc/widgets.php:55
+msgid "List the home page"
+msgstr ""

@@ -1,0 +1,198 @@
+# Copyright (C) 2019 Nacin
+# This file is distributed under the same license as the Handbook Functionality for Pages plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Handbook Functionality for Pages\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/handbook\n"
+"POT-Creation-Date: 2019-12-11T14:16:12+00:00\n"
+"PO-Revision-Date: 2019-12-11 15:19+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: français\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Domain: wporg\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#. Plugin Name of the plugin
+msgid "Handbook Functionality for Pages"
+msgstr "Fonctionnalités de manuel pour les pages"
+
+#. Description of the plugin
+msgid ""
+"Adds handbook-like table of contents to all Pages for a site. Covers Table "
+"of Contents and the \"watch this page\" widget."
+msgstr ""
+"Ajoute des tables des matières aux contenus de toutes les pages de votre "
+"site. Cela inclut les tables des matières et le widget \"Suivre cette page\"."
+
+#. Author of the plugin
+msgid "Nacin"
+msgstr "Nacin"
+
+#: handbook.php:184
+msgid "Handbook name"
+msgstr "Nom du manuel"
+
+#: handbook.php:185
+msgid "Handbook name (%s)"
+msgstr "Nom du manuel (%s)"
+
+#: handbook.php:228
+msgid "%s Page"
+msgstr "%s Page"
+
+#: handbook.php:230
+msgid "%s Pages"
+msgstr "%s Pages"
+
+#: handbook.php:407
+msgid "%s Sidebar"
+msgstr "%s Sidebar"
+
+#: handbook.php:408
+msgid "Used on %s pages"
+msgstr "Utilisé sur les pages %s"
+
+#: inc/breadcrumbs.php:53
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/breadcrumbs.php:57 inc/breadcrumbs.php:59
+msgid "Handbook"
+msgstr "Manuel"
+
+#: inc/callout-boxes.php:26
+msgid "Note:"
+msgstr "Note :"
+
+#: inc/callout-boxes.php:27
+msgid "Tip:"
+msgstr "Astuce :"
+
+#: inc/callout-boxes.php:28
+msgid "Alert:"
+msgstr "Alerte :"
+
+#: inc/callout-boxes.php:29
+msgid "Tutorial:"
+msgstr "Tutoriel :"
+
+#: inc/callout-boxes.php:30
+msgid "Warning:"
+msgstr "Attention :"
+
+#: inc/glossary.php:36 inc/glossary.php:47
+msgctxt "glossary"
+msgid "Glossary"
+msgstr "Glossaire"
+
+#: inc/glossary.php:37
+msgctxt "glossary"
+msgid "Entry"
+msgstr "Entrée"
+
+#: inc/glossary.php:38
+msgctxt "glossary"
+msgid "Add New"
+msgstr "Ajouter"
+
+#: inc/glossary.php:39
+msgctxt "glossary"
+msgid "Add New Entry"
+msgstr "Ajouter une nouvelle entrée"
+
+#: inc/glossary.php:40
+msgctxt "glossary"
+msgid "Edit Entry"
+msgstr "Modifier l’entrée"
+
+#: inc/glossary.php:41
+msgctxt "glossary"
+msgid "New Entry"
+msgstr "Nouvelle entrée"
+
+#: inc/glossary.php:42
+msgctxt "glossary"
+msgid "View Entry"
+msgstr "Afficher l’entrée"
+
+#: inc/glossary.php:43
+msgctxt "glossary"
+msgid "Search Glossary"
+msgstr "Rechercher dans le glossaire"
+
+#: inc/glossary.php:44
+msgctxt "glossary"
+msgid "No entries found"
+msgstr "Aucune entrée trouvée"
+
+#: inc/glossary.php:45
+msgctxt "glossary"
+msgid "No entries found in Trash"
+msgstr "Aucun entrée trouvée dans la corbeille"
+
+#: inc/glossary.php:46
+msgctxt "glossary"
+msgid "Parent Entry:"
+msgstr "Entrée parente"
+
+#: inc/glossary.php:48
+msgctxt "glossary"
+msgid "Glossary Entry"
+msgstr "Entrée du glossaire"
+
+#: inc/glossary.php:74
+msgid "Created by"
+msgstr "Créé par"
+
+#: inc/glossary.php:101
+msgid "Edit"
+msgstr "Modifier"
+
+#: inc/glossary.php:112
+msgid "Add new entry"
+msgstr "Ajouter une nouvelle entrée"
+
+#: inc/navigation.php:375
+msgid "Handbook navigation"
+msgstr "Navigation du manuel"
+
+#: inc/table-of-contents.php:37
+msgid "Topics"
+msgstr "Table des matières"
+
+#: inc/table-of-contents.php:145
+msgid "Top &uarr;"
+msgstr "Haut &uarr;"
+
+#: inc/watchlist.php:51
+msgid "<a href=\"%s\" title=\"%s\">Unwatch</a>"
+msgstr "<a href=\"%s\" title=\"%s\">Ne plus suivre</a>"
+
+#: inc/watchlist.php:53
+msgid "Stop getting notified about changes to this page"
+msgstr "Arrêter d’être notifié·e des changements de cette page"
+
+#: inc/watchlist.php:57
+msgid "<a href=\"%s\" title=\"%s\">Watch</a>"
+msgstr "<a href=\"%s\" title=\"%s\">Suivre</a>"
+
+#: inc/watchlist.php:59
+msgid "Get notified about changes to this page"
+msgstr "Être notifié·e des changements apportées à cette page"
+
+#: inc/widgets.php:27
+msgid "Your site&#8217;s Handbook Pages"
+msgstr "Les pages de manuel de votre site"
+
+#: inc/widgets.php:30
+msgid "Handbook Pages"
+msgstr "Pages de manuel"
+
+#: inc/widgets.php:55
+msgid "List the home page"
+msgstr "Inclure la page d’accueil"
