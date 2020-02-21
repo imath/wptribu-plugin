@@ -264,15 +264,17 @@ function prime_category_stickies( $posts = array(), $query = null ) {
 	if ( $sticky_posts ) {
 		$sticky_posts    = array_slice( $sticky_posts, 0, get_query_var( 'posts_per_page' ) );
 		$sticky_post_ids = wp_list_pluck( $sticky_posts, 'ID' );
-	}
 
-	foreach ( $posts as $key => $post ) {
-		if ( in_array( $post->ID, $sticky_post_ids, true ) ) {
-			unset( $posts[ $key ] );
+		foreach ( $posts as $key => $post ) {
+			if ( in_array( $post->ID, $sticky_post_ids, true ) ) {
+				unset( $posts[ $key ] );
+			}
 		}
+
+		return array_merge( $sticky_posts, $posts );
 	}
 
-	return array_merge( $sticky_posts, $posts );
+	return $posts;
 }
 add_filter( 'posts_results', __NAMESPACE__ . '\prime_category_stickies', 10, 2 );
 
