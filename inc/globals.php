@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register plugin globales
+ * Register plugin globals
  *
  * @since 1.0.0
  */
