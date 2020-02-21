@@ -76,6 +76,7 @@ final class WPTribu_Plugin {
 
 		require $inc_path . 'globals.php';
 		require $inc_path . 'functions.php';
+		require $inc_path . 'registers.php';
 	}
 
 	/**

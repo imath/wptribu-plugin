@@ -27,5 +27,7 @@ function register_globals() {
 	$wptp->assets_url         = plugin_dir_url( dirname( __FILE__ ) ) . 'assets';
 	$wptp->languages_path     = plugin_dir_path( dirname( __FILE__ ) ) . 'languages';
 	$wptp->languages_basepath = trailingslashit( dirname( plugin_basename( dirname( __FILE__ ) ) ) ) . 'languages';
+
+	$wptp->category_sticky = array();
 }
 add_action( 'plugins_loaded', __NAMESPACE__ . '\register_globals', 10 );
