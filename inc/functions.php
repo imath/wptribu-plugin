@@ -285,7 +285,15 @@ function enqueue_assets() {
 
 	$wptp = wptribu_plugin();
 
-	// Stick to category script
+	// Stick to category style.
+	wp_enqueue_style(
+		'wptribu-category-sticky',
+		$wptp->assets_url . '/css/style.css',
+		array(),
+		$wptp->version
+	);
+
+	// Stick to category script.
 	wp_enqueue_script(
 		'wptribu-category-sticky',
 		$wptp->assets_url . '/js/posts-collection.js',
