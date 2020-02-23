@@ -1,0 +1,28 @@
+{
+  "author": "imath",
+  "bugs": {
+    "url": "https://github.com/imath/wptribu-pluhin/issues"
+  },
+  "description": "WordPress plugin to extend some o2 & Handbook plugins features.",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.13.7"
+  },
+  "scripts": {
+    "wpcs": "./vendor/bin/phpcs class-wptribu-plugin.php inc/*.php --standard=WordPress",
+    "pot": "wp i18n make-pot --skip-js --headers='{\"Project-Id-Version\": \"wpTribu Plugin 1.0.0\", \"Report-Msgid-Bugs-To\": \"https://github.com/imath/wptribu-plugin/issues\", \"Last-Translator\": \"imath <contact@imathi.eu>\"}' . languages/wptribu-plugin.pot"
+  },
+  "keywords": [
+    "wordpress",
+    "o2",
+    "handbook"
+  ],
+  "homepage": "https://github.com/imath/wptribu-plugin",
+  "license": "GPL-2.0+",
+  "name": "wptribu-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imath/wptribu-plugin.git"
+  },
+  "version": "1.0.0"
+}

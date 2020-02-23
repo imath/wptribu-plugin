@@ -1,0 +1,89 @@
+# Copyright (C) 2020 imath
+# This file is distributed under the same license as the wpTribu Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: wpTribu Plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/imath/wptribu-plugin/issues\n"
+"Last-Translator: imath <contact@imathi.eu>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-23T16:46:17+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: wptribu-plugin\n"
+
+#. Plugin Name of the plugin
+msgid "wpTribu Plugin"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/imath/wptribu-plugin"
+msgstr ""
+
+#. Description of the plugin
+msgid "Utilities for the wptribu.org site."
+msgstr ""
+
+#. Author of the plugin
+msgid "imath"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/imath"
+msgstr ""
+
+#: inc/functions.php:55
+msgid "Documentation"
+msgstr ""
+
+#: inc/functions.php:149
+msgid "Subscribe"
+msgstr ""
+
+#: inc/functions.php:150
+msgid "Subscribe to comment feed"
+msgstr ""
+
+#: inc/functions.php:161
+msgid "Stick to category"
+msgstr ""
+
+#: inc/functions.php:162
+msgid "Stick the post at the top of this category’s first page"
+msgstr ""
+
+#: inc/functions.php:168
+msgid "Unstick from category"
+msgstr ""
+
+#: inc/functions.php:169
+msgid "Unstick the post from the top of this category’s first page"
+msgstr ""
+
+#. Translators: %s is the Term name
+#: inc/functions.php:342
+msgctxt "Category feed"
+msgid "%s’s feed"
+msgstr ""
+
+#. Translators: %s is the Term name
+#: inc/functions.php:349
+msgctxt "Tag feed"
+msgid "%s’s feed"
+msgstr ""
+
+#. Translators: %s is the Author display name
+#: inc/functions.php:356
+msgctxt "Author feed"
+msgid "%s’s feed"
+msgstr ""
+
+#: inc/functions.php:370
+msgid "Subcribe to feed"
+msgstr ""
+
+#: inc/functions.php:372
+msgid "Site’s feed"
+msgstr ""

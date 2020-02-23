@@ -29,7 +29,7 @@ function registers() {
 			'single'            => true,
 			'sanitize_callback' => 'wp_parse_id_list',
 			'show_in_rest'      => array(
-				'name' => 'wptribu_category_sticky',
+				'name'   => 'wptribu_category_sticky',
 				'schema' => array(
 					'type'    => 'array',
 					'items'   => array(

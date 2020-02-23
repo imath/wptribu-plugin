@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function load_textdomains() {
 	$locale  = get_locale();
 	$wptp    = wptribu_plugin();
-	$domains = array();
+	$domains = array( 'wptribu-plugin' => 'wptribu-plugin-' . $locale . '.mo' );
 
 	if ( class_exists( 'o2' ) ) {
 		$domains['o2'] = 'o2-' . $locale . '.mo';
@@ -103,7 +103,7 @@ function is_category_sticky( $post_id = 0, $category_id = 0 ) {
  *
  * @since 1.0.0
  *
- * @param array $actions   The o2 post actions.
+ * @param array   $actions The o2 post actions.
  * @param integer $post_id The ID or the post.
  * @return array           The o2 post actions.
  */
@@ -113,7 +113,7 @@ function get_o2_post_actions( $actions = array(), $post_id = 0 ) {
 		'href'         => get_post_comments_feed_link( $post_id ),
 		'classes'      => array( 'subscribe-to-post-feed', 'subscribe-to-feed' ),
 		'rel'          => false,
-		'initialState' => 'default'
+		'initialState' => 'default',
 	);
 
 	if ( is_category() && current_user_can( 'edit_others_posts' ) ) {
@@ -128,7 +128,7 @@ function get_o2_post_actions( $actions = array(), $post_id = 0 ) {
 			'href'         => esc_url( $category_link ),
 			'classes'      => array( 'wptribu-category-sticky-link' ),
 			'rel'          => false,
-			'initialState' => is_category_sticky( $post_id ) ? 'sticky' : 'normal'
+			'initialState' => is_category_sticky( $post_id ) ? 'sticky' : 'normal',
 		);
 	}
 
@@ -142,43 +142,50 @@ add_filter( 'o2_filter_post_actions', __NAMESPACE__ . '\get_o2_post_actions', 10
  * @since 1.0.0
  */
 function register_o2_post_action_states() {
-	o2_register_post_action_states( 'follow',
+	o2_register_post_action_states(
+		'follow',
 		array(
 			'default' => array(
 				'shortText' => __( 'Subscribe', 'wptribu-plugin' ),
 				'title'     => __( 'Subscribe to comment feed', 'wptribu-plugin' ),
 				'classes'   => array(),
-				'genericon' => 'genericon-rss'
-			)
+				'genericon' => 'genericon-rss',
+			),
 		)
 	);
 
-	o2_register_post_action_states( 'sticktocategory',
+	o2_register_post_action_states(
+		'sticktocategory',
 		array(
 			'normal' => array(
 				'shortText' => __( 'Stick to category', 'wptribu-plugin' ),
 				'title'     => __( 'Stick the post at the top of this category’s first page', 'wptribu-plugin' ),
 				'classes'   => array(),
 				'genericon' => 'genericon-sticked',
-				'nextState' => 'sticky'
+				'nextState' => 'sticky',
 			),
 			'sticky' => array(
 				'shortText' => __( 'Unstick from category', 'wptribu-plugin' ),
 				'title'     => __( 'Unstick the post from the top of this category’s first page', 'wptribu-plugin' ),
 				'classes'   => array( 'category-sticky' ),
 				'genericon' => 'genericon-sticked',
-				'nextState' => 'normal'
-			)
+				'nextState' => 'normal',
+			),
 		)
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_o2_post_action_states' );
 
+/**
+ * Updates the category stickies.
+ *
+ * @since 1.0.0
+ */
 function stick_to_category() {
 	if ( isset( $_GET['_wptribu_nonce'] ) && isset( $_GET['id'] ) ) {
 		\check_admin_referer( 'stick_to_category', '_wptribu_nonce' );
 
-		$post_id     = (int) wp_unslash( $_GET['id'] );
+		$post_id     = (int) wp_unslash( $_GET['id'] ); // phpcs:ignore
 		$category_id = (int) get_queried_object_id();
 		$hash        = '';
 
@@ -195,7 +202,7 @@ function stick_to_category() {
 					// Add.
 				} else {
 					$stickies[] = $post_id;
-					$hash = '#post-' . $post_id;
+					$hash       = '#post-' . $post_id;
 				}
 
 				// Always update.
@@ -214,6 +221,16 @@ function stick_to_category() {
 }
 add_action( 'template_redirect', __NAMESPACE__ . '\stick_to_category' );
 
+/**
+ * Adds a class to the post classes for category stickies.
+ *
+ * @since 1.0.0
+ *
+ * @param array        $classes The post classes.
+ * @param string|array $class   Space-separated string or array of class names to add to the class list.
+ * @param integer      $post_id The Post ID.
+ * @return array                The post classes.
+ */
 function post_classes( $classes = array(), $class = '', $post_id = 0 ) {
 	if ( is_category() && is_category_sticky( $post_id ) ) {
 		$classes[] = 'category-sticky';
@@ -256,7 +273,7 @@ function prime_category_stickies( $posts = array(), $query = null ) {
 
 	$sticky_posts = get_posts(
 		array(
-			'include' => wp_parse_id_list( $sticky_ids )
+			'include' => wp_parse_id_list( $sticky_ids ),
 		)
 	);
 	wp_reset_postdata();
@@ -278,6 +295,11 @@ function prime_category_stickies( $posts = array(), $query = null ) {
 }
 add_filter( 'posts_results', __NAMESPACE__ . '\prime_category_stickies', 10, 2 );
 
+/**
+ * Enqueues JS/CSS for the sticky categories feature.
+ *
+ * @since 1.0.0
+ */
 function enqueue_assets() {
 	if ( ! is_category() ) {
 		return;
@@ -294,7 +316,7 @@ function enqueue_assets() {
 	);
 
 	// Stick to category script.
-	wp_enqueue_script(
+	wp_enqueue_script( // phpcs:ignore
 		'wptribu-category-sticky',
 		$wptp->assets_url . '/js/posts-collection.js',
 		array( 'o2-cocktail' ),
@@ -317,21 +339,21 @@ function before_o2_sidebar() {
 			'<li class="wptribu-category-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
 			esc_url( get_category_feed_link( $queried_object->term_id ) ),
 			/* Translators: %s is the Term name */
-			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
+			sprintf( esc_html_x( '%s’s feed', 'Category feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
 		);
 	} elseif ( is_tag() ) {
 		$secondary_feed = sprintf(
 			'<li class="wptribu-tag-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
 			esc_url( get_edit_tag_link( $queried_object->term_id ) ),
 			/* Translators: %s is the Term name */
-			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
+			sprintf( esc_html_x( '%s’s feed', 'Tag feed', 'wptribu-plugin' ), esc_html( $queried_object->name ) )
 		);
 	} elseif ( is_author() ) {
 		$secondary_feed = sprintf(
 			'<li class="wptribu-author-feed"><a href="%1$s"><span class="genericon genericon-rss"></span> %2$s</a></li>',
 			esc_url( get_author_feed_link( $queried_object->ID ) ),
 			/* Translators: %s is the Author display name */
-			sprintf( esc_html__( '%s’s feed', 'wptribu-plugin' ), esc_html( $queried_object->display_name ) )
+			sprintf( esc_html_x( '%s’s feed', 'Author feed', 'wptribu-plugin' ), esc_html( $queried_object->display_name ) )
 		);
 	}
 
@@ -348,7 +370,7 @@ function before_o2_sidebar() {
 		esc_html__( 'Subcribe to feed', 'wptribu-plugin' ),
 		esc_url( get_feed_link() ),
 		esc_html__( 'Site’s feed', 'wptribu-plugin' ),
-		$secondary_feed
+		$secondary_feed // phpcs:ignore
 	);
 }
 add_action( 'before_o2_sidebar', __NAMESPACE__ . '\before_o2_sidebar' );
